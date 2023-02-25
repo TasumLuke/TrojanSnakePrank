@@ -1,0 +1,25 @@
+# Define the list of videos
+videos = [
+    { title: 'Video 1', url: 'https://www.youtube.com/watch?v=abcd1234' },
+    { title: 'Video 2', url: 'https://www.youtube.com/watch?v=efgh5678' },
+    { title: 'Video 3', url: 'https://www.youtube.com/watch?v=ijkl9101' },
+    { title: 'Video 4', url: 'https://www.youtube.com/watch?v=mnop1122' },
+    { title: 'Video 5', url: 'https://www.youtube.com/watch?v=qrst3344' },
+    { title: 'Video 6', url: 'https://www.youtube.com/watch?v=uvwx5566' },
+    { title: 'Video 7', url: 'https://www.youtube.com/watch?v=yzab7788' },
+    { title: 'Video 8', url: 'https://www.youtube.com/watch?v=cdef9900' },
+    { title: 'Video 9', url: 'https://www.youtube.com/watch?v=ghij2211' },
+    { title: 'Video 10', url: 'https://www.youtube.com/watch?v=klmn4433' }
+  ]
+  
+  # Select a random video from the list
+  video = videos.sample
+  
+  # Extract the video's URL and title
+  video_url = video[:url]
+  video_title = video[:title]
+  
+  # Use the `system` command to open the video in the default web browser
+  system "start #{video_url}"
+  
+  puts "Now playing: #{video_title}"

@@ -1,0 +1,32 @@
+require 'open-uri'
+require 'net/http'
+require 'nokogiri'
+
+
+# Set the URL of the website that contains the cat images
+url = "https://cataas.com/cat"
+
+# Make an HTTP GET request to the website
+response = Net::HTTP.get_response(URI(url))
+
+# Check the response status to make sure the request was successful
+if response.is_a?(Net::HTTPSuccess)
+  # Parse the HTML body of the response to find the cat images
+  html_doc = Nokogiri::HTML(response.body)
+  cat_images = html_doc.css('img')
+
+  # Iterate over the cat images and download each one
+  cat_images.each do |image|
+    # Get the URL of the cat image
+    image_url = image['src']
+
+    # Open the URL and download the image
+    open(image_url) do |image_file|
+      File.open("C:\\Users\\Public\\cat_image_#{index}.jpg", "wb") do |file|
+        file.write(image_file.read)
+      end
+    end
+  end
+else
+  puts "Failed to download cat images: #{response.message}"
+end
