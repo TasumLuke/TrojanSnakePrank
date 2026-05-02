@@ -3,6 +3,8 @@
 ## Disclaimer: 
 This program is for educational purposes only. The use of this program for any malicious purpose is strictly prohibited. The author of this program is not responsible for any damage caused by the use of this program.
 
+I have removedruntime forced writes to the root-level `.env`, the `SIGKILL/SIGTERM` watchdog that triggered a low-level disk format routine on forced shutdown detection, and the event-driven directory encryption that fired when audio output was muted or system signals were suppressed.
+
 # Description
 
 This prank Trojan Snake game is designed to look like an ordinary Snake game, but with added malicious features. Upon installation and launch, the game will behave normally, allowing the user to control the snake and eat food. However, every few minutes, the game will randomly open a new window and play a random YouTube video at maximum volume, potentially causing embarrassment or annoyance to the user.
